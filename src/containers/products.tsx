@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button"
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
+
+  const navigate = useNavigate()
+
   return (
     <>
       <div className="flex flex-col items-center justify-center gap-30 mt-12">
@@ -16,14 +20,14 @@ const Products = () => {
               <img className="rounded-2xl" src="/clothes.jpg" alt="" />
               <p className="text-blue-600">одежда для мальчиков</p>
             </div>
-            <Button className="cursor-pointer">Посмотреть в каталоге</Button>
+            <Button onClick={() => navigate('/catalog')} className="cursor-pointer">Посмотреть в каталоге</Button>
           </div>
           <div className="flex w-100 h-120  flex-col items-center justify-center gap-4">
             <div className="flex flex-col gap-2 items-center justify-center">
               <img className="rounded-2xl" src="/paijamas.jpg" alt="" />
               <p className="text-pink-400">одежда для девочек</p>
             </div>
-            <Button className="cursor-pointer">Посмотреть в каталоге</Button>
+            <Button onClick={() => navigate('/catalog')} className="cursor-pointer">Посмотреть в каталоге</Button>
           </div>
         </div>
       </div>

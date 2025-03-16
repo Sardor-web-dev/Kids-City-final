@@ -1,25 +1,19 @@
-import Footer from "./components/custom/footer"
-import Header from "./components/custom/header"
-import About from "./containers/about"
-import Best from "./containers/best"
-import Main from "./containers/main"
-import Photos from "./containers/photos"
-import Products from "./containers/products"
+import { Route, Routes } from "react-router-dom";
+import Layout from "./layouts/layout";
+import Home from "./pages/Home";
+import Catalog from "./pages/Catalogue";
 
 function App() {
   return (
     <>
-    <div className="flex flex-col items-center justify-center">
-      <Header/>
-      <Main/>
-      <Products/>
-        <About/>
-        <Best/>
-        <Photos/>
-        <Footer/>
-    </div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index  element={<Home />} />
+          <Route path="/catalog" element={<Catalog/>}  />
+        </Route>
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
